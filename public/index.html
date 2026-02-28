@@ -18,12 +18,58 @@
         <input type="url" id="url-input" placeholder="Rezept-URL einfuegen (YouTube, Instagram, TikTok, Web)..." autofocus>
         <button id="import-btn">Importieren</button>
       </div>
+      <div class="divider"><span>oder</span></div>
+      <div class="upload-area" id="upload-area">
+        <input type="file" id="photo-input" accept="image/*" hidden>
+        <p>Foto hochladen oder hierher ziehen</p>
+      </div>
+      <div class="divider"><span>oder</span></div>
+      <div class="text-input-group">
+        <textarea id="text-input" rows="4" placeholder="Eigenes Rezept oder Verfeinerungstipps hier einf&uuml;gen..."></textarea>
+        <button id="text-import-btn">Text importieren</button>
+      </div>
 
       <div id="status" class="status hidden">
         <div class="progress-bar">
           <div class="progress-fill" id="progress-fill"></div>
         </div>
         <p id="status-message"></p>
+      </div>
+
+      <div id="preview" class="preview hidden">
+        <h2 id="preview-title"></h2>
+        <div class="preview-grid">
+          <label>Name<input type="text" id="edit-name"></label>
+          <label>Portionen
+            <select id="edit-servings">
+              <option value="2">2 Personen</option>
+              <option value="3">3 Personen</option>
+              <option value="4" selected>4 Personen</option>
+              <option value="5">5 Personen</option>
+              <option value="6">6 Personen</option>
+              <option value="7">7 Personen</option>
+              <option value="8">8 Personen</option>
+              <option value="9">9 Personen</option>
+              <option value="10">10 Personen</option>
+            </select>
+          </label>
+          <label>Kochdauer
+            <select id="edit-cookingTime">
+              <option>kurz (&lt;20min)</option>
+              <option>mittel (20-45min)</option>
+              <option>lang (&gt;45min)</option>
+            </select>
+          </label>
+          <label>Kalorien/Portion<input type="number" id="edit-calories"></label>
+          <label>Tags<input type="text" id="edit-tags" placeholder="kommagetrennt"></label>
+        </div>
+        <label>Zutaten<textarea id="edit-ingredients" rows="8"></textarea></label>
+        <label>Zubereitung<textarea id="edit-instructions" rows="8"></textarea></label>
+        <label>Eigene Anmerkungen<textarea id="edit-notes" rows="3" placeholder="Optional: eigene Notizen zum Rezept..."></textarea></label>
+        <div class="preview-actions">
+          <button id="save-btn">In Notion speichern</button>
+          <button id="cancel-btn" class="secondary">Abbrechen</button>
+        </div>
       </div>
 
       <div id="result" class="result hidden"></div>

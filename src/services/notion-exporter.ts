@@ -8,6 +8,7 @@ export async function exportToNotion(
   recipe: ParsedRecipe,
   originalUrl: string,
   sourceType: SourceType,
+  notes?: string,
 ): Promise<string> {
   const children: any[] = [];
 
@@ -39,6 +40,22 @@ export async function exportToNotion(
       type: 'numbered_list_item',
       numbered_list_item: { rich_text: [{ text: { content: text } }] },
     });
+  }
+
+  // Eigene Anmerkungen
+  if (notes?.trim()) {
+    children.push({ type: 'divider', divider: {} });
+    children.push({
+      type: 'heading_2',
+      heading_2: { rich_text: [{ text: { content: 'Anmerkungen' } }] },
+    });
+    for (const line of notes.split('\n')) {
+      if (!line.trim()) continue;
+      children.push({
+        type: 'paragraph',
+        paragraph: { rich_text: [{ text: { content: line } }] },
+      });
+    }
   }
 
   // Transkript als Toggle (nur bei Video-Quellen)

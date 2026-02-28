@@ -16,6 +16,7 @@ export interface ParsedRecipe {
   tags: string[];
   imageUrl: string;
   calories: number;
+  servings: number;
   ingredients: string;
   instructions: string;
   transcript?: string;
@@ -29,4 +30,11 @@ export interface ImportJob {
   message: string;
   notionUrl?: string;
   error?: string;
+  sourceType?: SourceType;
+  recipe?: ParsedRecipe;
+  usage?: {
+    inputTokens: number;
+    outputTokens: number;
+    costCents: number;
+  };
 }
