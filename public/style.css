@@ -1,0 +1,84 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 560px;
+  width: 100%;
+  padding: 2rem;
+}
+
+header { text-align: center; margin-bottom: 2rem; }
+h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+header p { color: #888; }
+
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#url-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #16213e;
+  color: #e0e0e0;
+  font-size: 1rem;
+}
+
+#url-input:focus { outline: none; border-color: #e94560; }
+
+#import-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: #e94560;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+#import-btn:hover { background: #c73450; }
+#import-btn:disabled { background: #555; cursor: not-allowed; }
+
+.status { margin-top: 1.5rem; }
+
+.progress-bar {
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #e94560;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+#status-message { color: #aaa; font-size: 0.9rem; }
+
+.result {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #16213e;
+}
+
+.result.success { border-left: 3px solid #4ecca3; }
+.result.error { border-left: 3px solid #e94560; }
+.result a { color: #4ecca3; }
+
+.hidden { display: none; }

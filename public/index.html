@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rezepti</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Rezepti</h1>
+      <p>URL einfuegen, Rezept in Notion speichern.</p>
+    </header>
+
+    <main>
+      <div class="input-group">
+        <input type="url" id="url-input" placeholder="Rezept-URL einfuegen (YouTube, Instagram, TikTok, Web)..." autofocus>
+        <button id="import-btn">Importieren</button>
+      </div>
+
+      <div id="status" class="status hidden">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <p id="status-message"></p>
+      </div>
+
+      <div id="result" class="result hidden"></div>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "name": "rezepti",
+  "version": "0.1.0",
+  "description": "Rezept-Extraktor: URL rein, Rezept in Notion raus",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.78.0",
+    "@notionhq/client": "^5.11.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "playwright": "^1.58.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
